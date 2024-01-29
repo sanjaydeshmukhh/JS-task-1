@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "jl" ;
+    src: url(./JUSTICE\ LEAGUE.ttf);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.jumbo {
+    --stripes: repeating-linear-gradient(100deg,
+            #fff 0%,
+            #fff 7%,
+            transparent 10%,
+            transparent 12%,
+            #fff 16%);
+    --stripesDark: repeating-linear-gradient(100deg,
+            #000 0%,
+            #000 7%,
+            transparent 10%,
+            transparent 12%,
+            #000 16%);
+    --rainbow: repeating-linear-gradient(100deg,
+            #60a5fa 10%,
+            #e879f9 15%,
+            #60a5fa 20%,
+            #5eead4 25%,
+            #60a5fa 30%);
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(10px) invert(100%);
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .jumbo {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+
+.dark .jumbo::after {
+    background-image: var(--stripesDark), var(--rainbow);
+}
+
+#box{
+    height: 55vh;
+    width: 25vw;
+    background-color: rgba(255, 255, 255, 0.367);
+    position: absolute;
+    top: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+}
+
+#box button{
+    padding: 20px;
+    border: #000 solid 1px;
+}
+
+#rounded{
+    height: 200px;
+    width: 200px;
+    margin-top: 20px;
+    
+}
+
+#rounded img{
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+
+.confetti-button {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 25px 40px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid #081e2b;
+    color: #06450eff;
+    border-radius: 3px;
+    transition: .4s;
+    font-family: "jl";
+}
+
+
+/* .confetti-button:hover, */
+.confetti-button:active {
+    background: #000000;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+    transform: scale(.9);
+}
+
+#box p{
+    padding: 20px;
+    text-align: center;
+    font-family: "corbel";
+    letter-spacing: 0.8;
+    font-size: 20px;
+}
+
+#box h1{
+    font-size: 30px;
+    font-family: "corbel";
+    margin-bottom: 35px;
+
+}
+
